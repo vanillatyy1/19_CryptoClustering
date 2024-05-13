@@ -15,4 +15,4 @@ By applying machine learning algorithms, particularly KMeans clustering, the pro
 
 ## 4) Takeaways:
 - Understand the process of clustering analysis and its application in identifying patterns within complex datasets
-- Addressed FutureWarnings and UserWarnings, acquiring the ability to mitigate them effectively
+- Addressed FutureWarnings and UserWarnings, acquiring the ability to mitigate them
