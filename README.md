@@ -20,7 +20,6 @@ By applying machine learning algorithms, particularly KMeans clustering, the pro
 ## 5) Notes to Central Grader:
 To mitigate FutureWarnings and UserWarnings, I first attempted the following, and the code works the 1st time. But when I tried to run it again it does not work.
 
-"""
 ```
         # import os
         # os.environ["OMP_NUM_THREADS"] = "1"
@@ -37,13 +36,11 @@ To mitigate FutureWarnings and UserWarnings, I first attempted the following, an
 
         # warnings.filterwarnings("ignore", category=UserWarning, message="UserWarning: KMeans is known to have a memory leak on Windows with MKL, when there are less chunks than available threads. You can avoid it by setting the environment variable OMP_NUM_THREADS=1.*")
 ```
-"""
 
 But with the help of my tutor, I added the following code in the beginning and it successfully suppressed the warnings.
 
-"""
 ```
     import warnings
     warnings.filterwarnings("ignore")
 ```
-"""
+
