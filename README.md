@@ -18,29 +18,13 @@ By applying machine learning algorithms, particularly KMeans clustering, the pro
 - Addressed FutureWarnings and UserWarnings, acquiring the ability to mitigate them
 
 ## 5) Notes to Central Grader:
-To mitigate FutureWarnings and UserWarnings, I first attempted the following, and the code works the 1st time. But when I tried to run it again it does not work.
+Initially, attempts were made to address FutureWarnings and UserWarnings by setting the environment variable OMP_NUM_THREADS to "1". Although this approach worked initially, it did not provide a long-term solution.
 
-```
-        # import os
-        # os.environ["OMP_NUM_THREADS"] = "1"
-
-        # import warnings
-
-        # Suppress the warning
-        # There is a warning related to a known issue with KMeans in scikit-learn 
-        # when using Windows with MKL (Intel's Math Kernel Library). 
-        # It's a memory leak warning that occurs when there are fewer chunks than available threads.
-        # An attempt was made to write code "import import os os.environ["OMP_NUM_THREADS"] = "1"", but
-        # warning persists. An additional attempt to use "import warnings" and calls to filterwarnings() to supress the warning.
-        # Resources: https://docs.python.org/3/library/warnings.html
-
-        # warnings.filterwarnings("ignore", category=UserWarning, message="UserWarning: KMeans is known to have a memory leak on Windows with MKL, when there are less chunks than available threads. You can avoid it by setting the environment variable OMP_NUM_THREADS=1.*")
-```
-
-But with the help of my tutor, I added the following code in the beginning and it successfully suppressed the warnings.
+After consulting with my tutor, we implemented the following code at the beginning of the script, which successfully suppressed the warnings:
 
 ```
     import warnings
     warnings.filterwarnings("ignore")
 ```
+This solution effectively mitigated the warnings and ensured smooth execution of the code.
 
